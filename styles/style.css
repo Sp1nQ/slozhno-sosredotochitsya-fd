@@ -1,5 +1,271 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+/* Основные стили проекта. Это стили для темы, которую вы верстаете первой.
+.header__dark-theme-rec::before {
+  content: "rec";
+  position: absolute;
+  font-size: inherit;
+  letter-spacing: 1px;
+  color: var(--accent_color, #FF0070);
+  top: 12px;
+  right: 38px;
+  text-transform: uppercase;
+}
+
+.header__dark-theme-rec::after {
+  content: "";
+  position: absolute;
+  background-color: var(--accent_color, #FF0070);
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 100%;
+  box-shadow: 0 0 3px 3px var(--accent_color, #FF0070);
+  top: 18px;
+  right: 19px;
+}
+ */
+
+.header__dark-theme-rec {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--accent_color, #ff0070);
+  font-size: inherit;
+  text-transform: uppercase;
+  top: 13px;
+  right: 20px;
+  column-gap: 10px;
+}
+
+.header__dark-theme-rec::after {
+  content: "";
+  display: inline-block;
+  border-radius: 100%;
+  inline-size: 9px;
+  block-size: 9px;
+  background-color: var(--accent_color, #ff0070);
+  box-shadow: 0 0 3px 3px var(--accent_color, #ff0070);
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--accent_color, #ff0070);
+  border-left: 1px solid var(--accent_color, #ff0070);
+  bottom: 10px;
+  left: 10px;
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--accent_color, #ff0070);
+  border-right: 1px solid var(--accent_color, #ff0070);
+  top: 10px;
+  right: 10px;
+}
 
 .page {
+  font-family: var(--main_font, "IBM Plex mono"), monospace;
+  font-size: var(--main_font_size, 18px);
+  font-weight: var(--main_font-weight, 700);
+  line-height: var(--main_line-height, 23.4px);
+  color: var(--main_text_color, #f1b2ce);
+  background-color: var(--background_color, #000028);
+  background: var(--background_image, url(../images/cover-image-dark.png))
+    no-repeat center top / cover fixed;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+}
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content 1fr;
+  align-items: center;
+  inline-size: 100%;
+  min-block-size: 668px;
+  margin-block-end: 40px;
+  height: 100vh;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-content: end;
+  margin-inline-end: 10px;
+}
+
+.header__theme-menu-list {
+  display: grid;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  border: none;
+  color: var(--accent_color, #ff0070);
+  line-height: var();
+  text-transform: lowercase;
+  background-color: transparent;
+  min-inline-size: 70px;
+  min-block-size: 26px;
+  cursor: pointer;
+  line-height: 1.125em;
+  font-size: 18px;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--accent_color, #ff0070);
+  outline: none;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--button_hover_color, #ff007066);
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--accent_color, #ff0070);
+  pointer-events: none;
+}
+
+.header__title {
+  color: var(--h1_accent_color, #db00ff);
+  font-weight: var(--main_font-weight, 700);
+  font-size: var(--h1_font_size, 116px);
+  line-height: var(--h1_line-height, 95.7px);
+  text-shadow: 4px 4px 0 var(--accent_color, #ff0070);
+  font-size: var(--h1_font-size, clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem));
+  margin-left: 10px;
+}
+
+.header__subtitle {
+  background-color: var(--accent_color, #ff0070);
+  max-width: 355px;
+  grid-row: 3;
+  justify-self: center;
+  align-self: center;
+}
+
+.header__subtitle-text {
+  color: var(--background_color, #000028);
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0 10px;
+  gap: 50px;
+}
+
+.section {
+}
+
+.main_title {
+  color: var(--accent_color, #ff0070);
+  font-size: inherit;
+  line-height: 23.4px;
+  letter-spacing: 0%;
+  margin-block-end: 20px;
+}
+
+.main_list {
+  display: grid;
+  gap: 20px;
+}
+
+.main_list_item {
+}
+
+.main_subtitle {
+  background-color: var(--accent_color, #ff0070);
+  color: var(--background_color, #000028);
+  margin-block-end: 10px;
+  font-size: 18px;
+}
+
+.advice {
+  margin-bottom: 20px;
+}
+
+.main_subtitle_advice {
+  color: var(--background_color, #000028);
+  font-weight: var(--text_font-weight, 400);
+  background-color: var(--accent_color, #ff0070);
+  margin-block-end: 10px;
+}
+
+.main_text {
+  font-weight: var(--text_font-weight, 400);
+  font-size: inherit;
+  line-height: 23.4px;
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent_color, #ff0070);
+}
+
+.link:hover {
+  border-block-end: 1px solid var(--main_text_color, #f1b2ce);
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  outline: 1px solid var(--main_text_color, #f1b2ce);
+}
+
+.gallery {
+  display: grid;
+  gap: 10px;
+  font-size: 0;
+  line-height: 0;
+  margin-block-end: 40px;
+}
+
+.gallery_item {
+  inline-size: 100%;
+  block-size: 100%;
+  max-block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footer {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  position: relative;
+  block-size: 100vh;
+  min-block-size: 668px;
+}
+
+.footer__title {
+  color: var(--h1_accent_color, #db00ff);
+  font-weight: var(--main_font-weight, 700);
+  font-size: var(--h1_font_size, 116px);
+  line-height: var(--h1_line-height, 95.7px);
+  text-shadow: 2px 2px 0 var(--accent_color, #ff0070);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+}
+
+/* Media width >= 768px */
+@media (width >= 768px) {
+  .header {
+    min-block-size: 1024px;
+  }
 }
