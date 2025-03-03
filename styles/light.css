@@ -15,18 +15,20 @@
   --main_line-height: 23.4px;
   --text_font-weight: 400;
   --main_text_color: #353430;
+  --main_title_accent_color: #353430;
+  --decorated-zone_accent_color: #353430;
   --background_image: url("../images/cover-image-light.png");
-  --background_color: #fff1f7;
+  --accent_color_secondary: #353430;
   --accent_color: #ff8dcb;
+  --button_accent_color: #353430;
   --button_hover_color: #32312d66;
   --h1_accent_color: #ffc2e6;
-  --h1_font_size: 116px;
   --h1_line-height: 95.7px;
-  --h1_font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --h1_font_size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 }
 
-.theme-light .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
+.theme-light .header__dark-theme-rec {
+  display: none;
 }
 
 @media (prefers-color-scheme: light) {
@@ -37,13 +39,19 @@
     --main_line-height: 23.4px;
     --text_font-weight: 400;
     --main_text_color: #353430;
+    --main_title_accent_color: #353430;
+    --decorated-zone_accent_color: #353430;
     --background_image: url("../images/cover-image-light.png");
-    --background_color: #fff1f7;
+    --accent_color_secondary: #353430;
     --accent_color: #ff8dcb;
+    --button_accent_color: #353430;
     --button_hover_color: #32312d66;
     --h1_accent_color: #ffc2e6;
-    --h1_font_size: 116px;
     --h1_line-height: 95.7px;
-    --h1_font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    --h1_font_size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+
+  .header__dark-theme-rec {
+    display: none;
   }
 }
