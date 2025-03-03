@@ -1,27 +1,4 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой.
-.header__dark-theme-rec::before {
-  content: "rec";
-  position: absolute;
-  font-size: inherit;
-  letter-spacing: 1px;
-  color: var(--accent_color, #FF0070);
-  top: 12px;
-  right: 38px;
-  text-transform: uppercase;
-}
-
-.header__dark-theme-rec::after {
-  content: "";
-  position: absolute;
-  background-color: var(--accent_color, #FF0070);
-  inline-size: 9px;
-  block-size: 9px;
-  border-radius: 100%;
-  box-shadow: 0 0 3px 3px var(--accent_color, #FF0070);
-  top: 18px;
-  right: 19px;
-}
- */
+/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .header__dark-theme-rec {
   position: absolute;
@@ -89,37 +66,32 @@
 .header {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr min-content 1fr;
+  grid-template-rows: 1.1fr min-content 1.1fr;
   align-items: center;
   inline-size: 100%;
   min-block-size: 668px;
   margin-block-end: 40px;
   height: 100vh;
+  padding: 10px;
 }
 
 .header__theme-menu {
   justify-self: end;
-  align-content: end;
-  margin-inline-end: 10px;
 }
 
 .header__theme-menu-list {
-  display: grid;
+  display: flex;
   gap: 10px;
 }
 
 .header__theme-menu-button {
   border: none;
   color: var(--accent_color, #ff0070);
-  line-height: var();
   text-transform: lowercase;
   background-color: transparent;
   min-inline-size: 70px;
   min-block-size: 26px;
   cursor: pointer;
-  line-height: 1.125em;
-  font-size: 18px;
 }
 
 .header__theme-menu-button:focus {
@@ -147,7 +119,6 @@
   line-height: var(--h1_line-height, 95.7px);
   text-shadow: 4px 4px 0 var(--accent_color, #ff0070);
   font-size: var(--h1_font-size, clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem));
-  margin-left: 10px;
 }
 
 .header__subtitle {
@@ -156,15 +127,11 @@
   grid-row: 3;
   justify-self: center;
   align-self: center;
-}
-
-.header__subtitle-text {
   color: var(--background_color, #000028);
 }
 
 .main {
   display: grid;
-  grid-template-columns: 1fr;
   padding: 0 10px;
   gap: 50px;
 }
@@ -192,11 +159,14 @@
   background-color: var(--accent_color, #ff0070);
   color: var(--background_color, #000028);
   margin-block-end: 10px;
-  font-size: 18px;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
 }
 
 .advice {
-  margin-bottom: 20px;
+  margin-block-end: 20px;
 }
 
 .main_subtitle_advice {
@@ -267,5 +237,146 @@
 @media (width >= 768px) {
   .header {
     min-block-size: 1024px;
+    padding: 20px;
+    margin-block-end: 60px;
+  }
+
+  .decorated-zone::before {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .decorated-zone::after {
+    top: 20px;
+    right: 20px;
+  }
+
+  .header__dark-theme-rec {
+    top: 20px;
+    right: 29px;
+  }
+
+  .header__title {
+    position: relative;
+    inset-inline-start: -20px;
+    font-size: var(
+      --h1_font-size,
+      clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem)
+    );
+  }
+
+  .header__subtitle {
+    justify-self: end;
+    max-width: 364px;
+  }
+
+  .main {
+    padding: 0 20px;
+    gap: 80px;
+  }
+
+  .section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+
+  .what_grid .main_list {
+    grid-column: 1 / 3;
+  }
+
+  .how_grid .main_list {
+    grid-column: 2 / 3;
+  }
+
+  .main_title {
+    margin-block-end: 0;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    grid-column: span 2;
+    margin-block-start: 20px;
+    margin-block-end: 60px;
+  }
+
+  .gallery_item {
+    object-fit: cover;
+  }
+
+  .sunset {
+    grid-column: span 2;
+    grid-row: 1;
+  }
+
+  .ice-cream {
+    grid-row: span 2;
+  }
+
+  .tape {
+    grid-column: 1;
+    grid-row: 2 / 4;
+  }
+
+  .street {
+    grid-column: span 2;
+  }
+
+  .books {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .footer {
+    min-block-size: 1024px;
+  }
+
+  .footer-title {
+    font-size: var(
+      --h1_font-size,
+      clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem)
+    );
+  }
+}
+
+/* Media width >= 1024 */
+@media (width >= 1024px) {
+  .header {
+    min-block-size: 768px;
+  }
+
+  .header__theme-menu {
+    align-self: flex-start;
+    justify-self: center;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .header__subtitle {
+    justify-self: end;
+    max-width: 491px;
+  }
+
+  .section {
+    gap: 20px 10px;
+  }
+
+  .what_grid .main_list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer {
+    min-block-size: 768px;
+  }
+
+  .footer-title {
+    font-size: var(
+      --h1_font-size,
+      clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem)
+    );
   }
 }

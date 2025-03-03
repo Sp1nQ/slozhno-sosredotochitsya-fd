@@ -10,16 +10,15 @@
   --main_line-height: 23.4px;
   --text_font-weight: 400;
   --main_text_color: #f1b2ce;
-  --background_image: url('../images/cover-image-dark.png');
+  --background_image: url("../images/cover-image-dark.png");
   --background_color: #000028;
-  --accent_color: #FF0070;
-  --button_hover_color: #FF007066;
-  --h1_accent_color: #DB00FF;
+  --accent_color: #ff0070;
+  --button_hover_color: #ff007066;
+  --h1_accent_color: #db00ff;
   --h1_font_size: 116px;
   --h1_line-height: 95.7px;
   --h1_font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 }
-
 
 @media (width >= 768px) {
   :root {
