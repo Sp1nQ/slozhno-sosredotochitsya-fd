@@ -223,7 +223,7 @@
   font-weight: var(--main_font-weight, 700);
   line-height: var(--h1_line-height, 95.7px);
   text-shadow: 2px 2px 0 var(--accent_color, #ff0070);
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: var(--h1_font-size, clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem));
 }
 
 /* Media width >= 768px */
@@ -350,6 +350,7 @@
   }
 
   .header__subtitle {
+    margin-top: 16px;
     justify-self: end;
     max-width: 491px;
   }
@@ -364,12 +365,5 @@
 
   .footer {
     min-block-size: 768px;
-  }
-
-  .footer-title {
-    font-size: var(
-      --h1_font-size,
-      clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem)
-    );
   }
 }
