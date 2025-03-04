@@ -18,6 +18,7 @@
   --main_title_accent_color: #ff0070;
   --decorated-zone_accent_color: #ff0070;
   --background_image: url("../images/cover-image-dark.png");
+  --background_color: #000028;
   --accent_color_secondary: #000028;
   --accent_color: #ff0070;
   --button_accent_color: #ff0070;
@@ -27,6 +28,31 @@
   --h1_font_size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 }
 
-.theme-dark .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main_font: IBM Plex mono, monospace;
+    --main_font_size: 18px;
+    --main_font-weight: 700;
+    --main_line-height: 23.4px;
+    --text_font-weight: 400;
+    --main_text_color: #f1b2ce;
+    --main_title_accent_color: #ff0070;
+    --decorated-zone_accent_color: #ff0070;
+    --background_image: url("../images/cover-image-dark.png");
+    --background_color: #000028;
+    --accent_color_secondary: #000028;
+    --accent_color: #ff0070;
+    --button_accent_color: #ff0070;
+    --button_hover_color: #ff007066;
+    --h1_accent_color: #db00ff;
+    --h1_line-height: 95.7px;
+    --h1_font_size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+  .theme-dark .header__dark-theme-rec {
+    display: flex;
+  }
+}
+
+.theme-dark .header__dark-theme-rec {
+  display: flex;
 }

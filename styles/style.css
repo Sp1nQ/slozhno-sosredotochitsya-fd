@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   color: var(--accent_color, #ff0070);
+  font-weight: var(--text_font-weight, 400);
   font-size: inherit;
   text-transform: uppercase;
   top: 13px;
@@ -59,7 +60,7 @@
   color: var(--main_text_color, #f1b2ce);
   background: var(--background_image, url(../images/cover-image-dark.png))
     no-repeat center top / cover fixed;
-  background-color: var(--accent_color_secondary, #000028);
+  background-color: var(--background_color, #000028);
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
 
@@ -93,6 +94,8 @@
   min-inline-size: 70px;
   min-block-size: 26px;
   cursor: pointer;
+  transition: all 1s ease-out;
+  /* свойство transition действительно очень позитивно влияет на восприятия, я много игрался с его вариантами) */
 }
 
 .header__theme-menu-button:focus {
@@ -140,7 +143,7 @@
   color: var(--main_title_accent_color, #ff0070);
   font-size: inherit;
   line-height: 23.4px;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   margin-block-end: 20px;
 }
 
@@ -149,6 +152,13 @@
   gap: 20px;
 }
 
+
+/* 
+Если Вы вдруг заметите и будет минута посмотреть, 
+то прошу уточнить, почему селектор ниже перестал наследовать стили шрифта автоматом.
+Почти до финала проекта не было свойств inherit, в какой-то момент я "все сломал" и их пришлось прописывать.
+Спасибо.
+*/
 .main_subtitle {
   background-color: var(--accent_color, #ff0070);
   color: var(--accent_color_secondary, #000028);
@@ -174,6 +184,11 @@
   font-weight: var(--text_font-weight, 400);
   font-size: inherit;
   line-height: 23.4px;
+}
+
+/* Решение для гибкого изменения количества абзацев  */
+p:not(:last-of-type) {
+  margin-bottom: 10px;
 }
 
 .link {
